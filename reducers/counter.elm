@@ -1,11 +1,12 @@
-type alias Model = Int
+module Counter where
 
-type Action =  { type: String }
+type alias Action =  { type': String }
 
-update : Action -> Model -> Model
+update : Action -> Int -> Int
 update action model =
-  case action.type of
+  case action.type' of
     "INCREMENT" -> model + 1
     "DECREMENT" -> model - 1
 
--- TODO FFI with javascript to export update function
+-- TODO how to export function
+port counter : update

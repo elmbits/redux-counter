@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { createStore } from 'redux'
 import Counter from './components/Counter'
-import counter from './reducers'
+import counter from './reducers/Counter'
 
 const store = createStore(counter)
 const rootEl = document.getElementById('root')
@@ -14,7 +14,7 @@ function render() {
       onIncrement={() => store.dispatch({ type: 'INCREMENT' })}
       onDecrement={() => store.dispatch({ type: 'DECREMENT' })}
     />,
-    rootEl  
+    rootEl
   )
 }
 
